@@ -1,5 +1,6 @@
 body {
-    background-color: #9ae0f8
+    background-color: #c1f0f0;
+;
 ;
     display: flex;
     line-height: 1.5;
@@ -9,13 +10,13 @@ body {
 
 h1 {
     text-align: center;
-    border-bottom: 4px solid deepskyblue;
+    border-bottom: 4px solid ;
     margin-bottom: 1em;
     padding-bottom: 0.25em;
 }
 
 .container {
-    background-color: #ccf3ff;
+    background-color: #80bfff;
     padding: 50px;
     margin: 7em auto 0 auto;
     -webkit-filter: drop-shadow(0 1em 1em rgba(0, 0, 0, 0.1));
@@ -38,7 +39,7 @@ h1 {
     line-height: 2.2rem;
     height: 30vh;
     text-align: center;
-    color: #23313e;
+    color: #28a4a4;
     font-weight: bold;
 }
 

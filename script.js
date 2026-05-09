@@ -1,12 +1,29 @@
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width" />
-        <title>Climate</title>
-        <link href="style.css" rel="stylesheet" type="text/css" />
-    </head>
+const api = {
+    key: 'cd262200e7749c38590c5670d8d623fb',
+    base: 'https://api.openweathermap.org/data/2.5/weather?',
+};
 
-    <body>
-        <script scr= "script.js"></script>
-    </body>
-    </html>
+const Input = document.getElementById('input');
+
+Input.addEventListener('keypress', (event) => {
+    if (event.keyCode == 13) {
+        getWeather(Input.value);
+
+        const date = moment();
+        document.getElementById('date').innerHTML=date.format(
+            'Mo MMM YYYY dddd, h:mm:ss'
+        );
+
+        document.querySelector('.main-weather').style.display = 'block';
+    }
+});
+
+document.querySelector('main-weather').style.display = 'block';
+
+function getWeather(city) {
+    fetch(`${api.base}q=${city}&appid=${appi.key}&units=metric`)
+    .then((details) => {
+        return details.json();
+    })
+    .then(showWeather);
+}
