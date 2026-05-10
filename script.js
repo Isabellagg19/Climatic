@@ -59,4 +59,15 @@ function showWeather(details) {
     } else {
         document.body.style.backgroundImage = "https://openweathermap.org/payload/api/media/file/50n.@2png";
     }
+
+    let backgroundweather = details.weather[0].main.toLowerCase();
+    if (backgroundweather.includes("cloud")) {
+        document.body.style.backgroundImage = "url('cloudy.gif')";
+    } else if (backgroundweather.includes("rain")) {
+        document.body.style.backgroundImage = "url('rain.gif')";
+    } else if (backgroundweather.includes("clear")) {
+        document.body.style.backgroundImage = "url('clear.gif')";
+} else {
+    document.body.style.backgroundImage = "url('sunny.wedp')";
+}
 }
