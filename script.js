@@ -48,7 +48,7 @@ function showWeather(details) {
  let icon = document.getElementById('icon');
     let iconCode = details.weather[0].icon;
     icon.src = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
-
+ 
     let weatherTypeIcon  = details.weather[0].main.toLowerCase();
     if (weatherTypeIcon.includes("cloud")) {
         document.body.style.backgroundImage = "https://openweathermap.org/payload/api/media/file/03n.@2png";
