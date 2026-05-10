@@ -1,7 +1,5 @@
 body {
     background-color: #c1f0f0;
-;
-;
     display: flex;
     line-height: 1.5;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -42,6 +40,7 @@ h1 {
     text-align: center;
     color: #0a3434;
     font-weight: bold;
+    padding-bottom: 200px;
 }
 
 .temp {

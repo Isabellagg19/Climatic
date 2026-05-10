@@ -44,4 +44,8 @@ function showWeather(details) {
 
     let weatherType = document.getElementById('weather-type');
     weatherType.innerHTML = `${details.weather[0].main}`;
+
+    let icon = document.getElementById('icon');
+    let iconCode =details.weather[0].icon;
+    icon.src = `https://openweathermap.org/payload/api/media/file/10d@2x.png`;
 }
