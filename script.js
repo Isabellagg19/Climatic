@@ -11,19 +11,37 @@ Input.addEventListener('keypress', (event) => {
 
         const date = moment();
         document.getElementById('date').innerHTML=date.format(
-            'Mo MMM YYYY dddd, h:mm:ss'
+            'DD MMM YYYY, HH:mm:ss'
         );
 
         document.querySelector('.main-weather').style.display = 'block';
     }
 });
 
-document.querySelector('main-weather').style.display = 'block';
 
 function getWeather(city) {
-    fetch(`${api.base}q=${city}&appid=${appi.key}&units=metric`)
+    fetch(`${api.base}q=${city}&appid=${api.key}&units=metric`)
     .then((details) => {
         return details.json();
     })
     .then(showWeather);
+}
+
+function showWeather(details) {
+
+    console.log(details);
+    
+    let city = document.getElementById('city');
+    city.innerHTML = `${details.name}, ${details.sys.country}`;
+
+    let temperature = document.getElementById('temp');
+    temperature.innerHTML = `${Math.round(details.main.temp)}°C`;
+
+    let minMax = document.getElementById('min-max');
+    minMax.innerHTML = `${Math.round(
+        details.main.temp_min
+    )}°C (Min) and ${Math.round(details.main.temp_max)}°C (Max)`;
+
+    let weatherType = document.getElementById('weather-type');
+    weatherType.innerHTML = `${details.weather[0].main}`;
 }

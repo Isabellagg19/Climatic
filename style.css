@@ -13,6 +13,7 @@ h1 {
     border-bottom: 4px solid ;
     margin-bottom: 1em;
     padding-bottom: 0.25em;
+    color: #002626;
 }
 
 .container {
@@ -39,7 +40,7 @@ h1 {
     line-height: 2.2rem;
     height: 30vh;
     text-align: center;
-    color: #28a4a4;
+    color: #0a3434;
     font-weight: bold;
 }
 
