@@ -45,7 +45,18 @@ function showWeather(details) {
     let weatherType = document.getElementById('weather-type');
     weatherType.innerHTML = `${details.weather[0].main}`;
 
-    let icon = document.getElementById('icon');
-    let iconCode =details.weather[0].icon;
-    icon.src = `https://openweathermap.org/payload/api/media/file/10d@2x.png`;
+ let icon = document.getElementById('icon');
+    let iconCode = details.weather[0].icon;
+    icon.src = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+
+    let weatherTypeIcon  = details.weather[0].main.toLowerCase();
+    if (weatherTypeIcon.includes("cloud")) {
+        document.body.style.backgroundImage = "https://openweathermap.org/payload/api/media/file/03n.@2png";
+    } else if (weatherTypeIcon.includes("rain")) {
+        document.body.style.backgroundImage = "https://openweathermap.org/payload/api/media/file/09n.@2png";
+    } else if (weatherTypeIcon.includes("clear")) {
+        document.body.style.backgroundImage = "https://openweathermap.org/payload/api/media/file/01n.@2png";
+    } else {
+        document.body.style.backgroundImage = "https://openweathermap.org/payload/api/media/file/50n.@2png";
+    }
 }
